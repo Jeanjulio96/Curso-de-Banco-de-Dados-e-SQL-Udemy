@@ -1,0 +1,56 @@
+/* OPERADORES LÓGICOS */
+
+/* OR> PARA QUE A SAIDA DA QUERY SEJA VERDADEIRA BASTA QUE APENAS UMA CONDICAO 
+SEJA VERDADEIRA */
+
+/* AND -> PARA QUE A SAIDA SEJA VERDADEIRA TODAS AS CONDIÇÕES
+ PRECISAM SER VERDADEIRAS */
+ 
+ /* OR - OU */
+ 
+ SELECT NOME, SEXO, ENDERECO FROM CLIENTE
+ WHERE SEXO = 'M' OR ENDERECO LIKE %RJ;
+ 
+ /* AND - E */
+ 
+ SELECT NOME, SEXO, ENDERECO FROM CLIENTE
+ WHERE SEXO = 'M' and ENDERECO LIKE %RJ;
+ 
+ /* PERFORMANCES EM OPERADORES LÓGICOS */
+ 
+ /* COUNT(*), GROUP BY */
+ 
+ /* CONTANTO REGISTROS NA TABELA */
+ 
+ SELECT COUNT(*) FROM CLIENTE;
+ SELECT COUNT(*) AS "Quantidade de registros na tab. Cliente" FROM CLIENTE;
+ 
+ /* OPERADOR GROUP BY */
+ 
+ SELECT SEXO, COUNT(*) FROM CLIENTE GROUP BY SEXO;
+ 
+ 
+ /* EXERCÍCIO 2 */
+ 
+ /* Como estamos trabalhando com OR e a segunda condicão é opcional,
+ colocamos na primeira condição quem tem mais chances de uma saída
+ verdadeira, pois a segunda condição não será checada nesse caso */
+ 
+ /* 21 Filmes | 53 Roupas */
+ 
+ SELECT * FROM FUNCIONARIOS WHERE DEPARTAMENTO = "ROUPAS" or DEPARTAMENTO = "FILMES";
+ 
+ /* LAR -  52 | FILMES - 21; */
+ 
+ SELECT * FROM FUNCIONARIOS
+ WHERE (DEPARTAMENTO = 'Lar' and SEXO = 'Feminino') or (DEPARTAMENTO = 'Filmes' and SEXO = 'Feminino');
+ 
+ 
+ SELECT * FROM FUNCIONARIOS WHERE SEXO = "MASCULINO" OR DEPARTAMENTO = "JARDIM";
+ 
+ /* FILTRANDO VALORES NULOS */
+ 
+ 
+ 
+
+
